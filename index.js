@@ -275,10 +275,14 @@ Create a function called `removeArtist` that takes two arguments:
  * For example, if removeArtist is invoked with the data and the number 0,
  * it will remove Amedeo Modigliani from our dataset and log the number 19.  
 */
-function removeArtist(/*Your Code Here*/) {
-   /*Your Code Here*/
+
+
+function removeArtist(aArray, aIndx) {
+  let aArtist = aArray[aIndx];
+  aArray.splice(aArtist,1);
+  return artists.length-1;
 }
-   
+console.log(artists.length-1);   
 
 /**
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -295,8 +299,18 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should return the new array with information added"*/
 
-function addArtist(/*Your Code Here*/){
-    /*Your Code Here*/
+function addArtist(anArray){
+    anArray.push({
+      "id": 20,
+      "name": "Robert J Garcia",
+      "years": "1987 - 2020",
+      "genre": "Web Design",
+      "nationality": "American",
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Venenatis cras sed felis eget velit aliquet sagittis.",
+      //"wikipedia": "http://en.wikipedia.org/wiki/Vincent_van_Gogh",
+      //"paintings": 877
+    })
+    return anArray;
   }
 
   
