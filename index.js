@@ -209,8 +209,8 @@ Practice accessing data above by console.log-ing following items:
 (1) Name of the first artist (0th index) in the array
 
 (2) Bio of the third artist (2nd index) in the array */
-console.log(artists[0]);
-console.log(artists[2]);
+console.log(artists[0].name);
+console.log(artists[2].bio);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -255,14 +255,16 @@ If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
 
 function get20s(datas){
-  let arreheh = [];
-  //for(let i in datas){
-  for(let i = 0; i < datas.length; i++){
-   if(datas[i].years.includes("190") && datas[i].years.includes("- 19")){
-    arreheh.push(datas[i].name);
-   }
-  }
-   return arreheh;
+  let aRange = [];
+  datas.forEach((artist) => {
+    let yearRanges = artist.years.split(" - ");
+    let bYear = Number(yearRanges[0]);
+    let dYear = Number(yearRanges[1]);
+    if(bYear >= 1900 && dYear <= 2000){
+      aRange.push(artist.name);
+    }
+  });
+   return aRange;
 }
 
 
@@ -276,13 +278,14 @@ Create a function called `removeArtist` that takes two arguments:
  * it will remove Amedeo Modigliani from our dataset and log the number 19.  
 */
 
+//console.log(artists.length);  
 
 function removeArtist(aArray, aIndx) {
-  let aArtist = aArray[aIndx];
-  aArray.splice(aArtist,1);
-  return artists.length-1;
+  let aArtist = aArray;
+  aArtist.splice(aIndx,1);
+  return aArtist.length;
 }
-console.log(artists.length-1);   
+console.log(removeArtist(artists, 0));
 
 /**
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
