@@ -316,8 +316,6 @@ function addArtist(anArray){
     return anArray;
   }
 
-  
-
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Create a function called lotsOfArt() that takes one argument: 
 
